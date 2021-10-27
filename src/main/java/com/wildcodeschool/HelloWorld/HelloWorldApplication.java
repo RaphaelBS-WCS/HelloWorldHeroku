@@ -2,10 +2,12 @@ package com.wildcodeschool.HelloWorld;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.stereotype.*;
 
-@SpringBootApplication
+@Controller
+@SpringBootApplication(exclude={DataSourceAutoConfiguration.class})
 public class HelloWorldApplication {
 
 	@RequestMapping("/")
@@ -17,5 +19,5 @@ public class HelloWorldApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(HelloWorldApplication.class, args);
 	}
-
 }
+
